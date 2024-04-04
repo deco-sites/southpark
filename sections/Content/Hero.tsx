@@ -13,10 +13,11 @@ export interface Props {
    * @format html
    */
   title: string;
-  description: string;
-  image?: ImageWidget;
+  description?: string;
+  image: ImageWidget;
   placement: "left" | "right";
   cta: CTA[];
+  width: number;
 }
 
 const PLACEMENT = {
@@ -26,7 +27,7 @@ const PLACEMENT = {
 
 export default function HeroFlats({
   title = "Hero",
-  description = "Your description here",
+  description = "",
   image,
   placement,
   cta,
@@ -35,41 +36,33 @@ export default function HeroFlats({
     <div>
       <div class="mx-auto flex flex-col items-center gap-8">
         <div
-          class={`flex w-full xl:container xl:mx-auto py-20 mx-5 md:mx-10 z-10 ${
-            image
-              ? PLACEMENT[placement]
-              : "flex-col items-center justify-center text-center"
-          } lg:py-36 gap-12 md:gap-20 items-center`}
+          class={`flex w-full xl:mx-auto z-10`}
         >
           {image && (
             <Image
-              width={640}
-              class="w-full lg:w-1/2 object-fit"
+              class="w-full object-fit h-[100vw] lg:h-[auto]"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={image}
               alt={image}
+              width={1920}
               decoding="async"
               loading="lazy"
             />
           )}
           <div
-            class={`mx-6 lg:mx-auto lg:w-full space-y-4 gap-4 ${
-              image
-                ? "lg:w-1/2 lg:max-w-xl"
-                : "flex flex-col items-center justify-center lg:max-w-3xl"
-            }`}
+            class={`mx-6 lg:mx-auto space-y-4  absolute left-[45%] top-[40%] lg:top-1/2 lg:left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center flex-col items-center w-[90%] lg:w-full`}
           >
             <div
-              class="inline-block text-[80px] leading-[100%] font-medium tracking-[-2.4px]"
+              class="inline-block lg:text-[80px] leading-[100%] font-medium tracking-[-2.4px] text-[48px] efeito-vidro px-4 py-2 lg:px-0 lg:py-0"
               dangerouslySetInnerHTML={{
                 __html: title,
               }}
             >
             </div>
-            <p class="text-zinc-400 text-[16px] md:text-[18px] leading-[150%]">
+            <p class="text-zinc-400 md:text-[18px] leading-[150%] text-center">
               {description}
             </p>
-            <div class="flex flex-col items-center lg:items-start lg:flex-row gap-4">
+            <div class="flex flex-col items-center lg:items-start lg:flex-row">
               {cta?.map((item) => (
                 <a
                   key={item?.id}

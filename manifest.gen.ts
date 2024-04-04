@@ -101,8 +101,7 @@ const manifest = {
     "deco-sites/southpark/sections/Miscellaneous/CookieConsent.tsx": $$$$$$32,
     "deco-sites/southpark/sections/Miscellaneous/Slide.tsx": $$$$$$33,
     "deco-sites/southpark/sections/Newsletter/Newsletter.tsx": $$$$$$34,
-    "deco-sites/southpark/sections/Product/ImageGalleryFrontBack.tsx":
-      $$$$$$35,
+    "deco-sites/southpark/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$35,
     "deco-sites/southpark/sections/Product/NotFound.tsx": $$$$$$36,
     "deco-sites/southpark/sections/Product/NotFoundChallenge.tsx": $$$$$$37,
     "deco-sites/southpark/sections/Product/ProductDetails.tsx": $$$$$$38,

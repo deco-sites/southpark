@@ -52,38 +52,32 @@ function Newsletter(
     >
       <div class="flex flex-col gap-4">
         {content?.title && (
-          <h4 class={tiled ? "text-2xl lg:text-3xl" : "text-lg"}>
+          <h4 class={tiled ? "text-2xl lg:text-3xl text-white" : "text-lg"}>
             {content?.title}
           </h4>
         )}
-        {content?.description && <div>{content?.description}</div>}
       </div>
       <div class="flex flex-col gap-4">
         <form
           class="form-control"
           onSubmit={handleSubmit}
         >
-          <div class="flex flex-wrap gap-3">
+          <div class="flex flex-wrap gap-3 border-2 border-[#f47320]">
             <input
               name="email"
-              class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
+              class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content bg-transparent"
               placeholder={content?.form?.placeholder || "Digite seu email"}
             />
             <button
               type="submit"
-              class="btn disabled:loading"
+              class="btn disabled:loading bg-[#f47320] uppercase text-white rounded-none hover:bg-[#009B67]"
+              style="border:none;"
               disabled={loading}
             >
               {content?.form?.buttonText || "Inscrever"}
             </button>
           </div>
         </form>
-        {content?.form?.helpText && (
-          <div
-            class="text-sm"
-            dangerouslySetInnerHTML={{ __html: content?.form?.helpText }}
-          />
-        )}
       </div>
     </div>
   );
